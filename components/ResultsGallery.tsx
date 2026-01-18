@@ -14,33 +14,33 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
 
   const results = [
     {
-      image: '/images/co2-laser-results-1.png',
-      title: 'Skin Resurfacing',
-      description: 'Dramatic improvement in skin texture and tone',
+      image: '/images/Acne Scarring Before and After.jpeg',
+      title: 'Acne Scar Treatment',
+      description: 'Dramatically reduce acne scarring and improve skin texture',
       time: 'Results Vary',
       isAvailable: true,
       featured: true
     },
     {
-      image: '/images/co2-laser-acne-scars.png',
-      title: 'Acne Scar Treatment',
-      description: 'Significantly reduce acne scarring',
+      image: '/images/pigmentation.png',
+      title: 'Pigmentation Correction',
+      description: 'Reverse sun damage and age spots',
       time: 'Results Vary',
       isAvailable: true,
       featured: false
     },
     {
-      image: '/images/co2-laser-wrinkles.png',
+      image: '/images/beforeafter1.jpg',
+      title: 'Skin Resurfacing',
+      description: 'Smooth fine lines and improve skin tone',
+      time: 'Results Vary',
+      isAvailable: true,
+      featured: false
+    },
+    {
+      image: '/images/beforeafter2.jpg',
       title: 'Wrinkle Reduction',
-      description: 'Smooth fine lines and deep wrinkles',
-      time: 'Results Vary',
-      isAvailable: true,
-      featured: false
-    },
-    {
-      image: '/images/co2-laser-sun-damage.png',
-      title: 'Sun Damage Repair',
-      description: 'Reverse pigmentation and age spots',
+      description: 'Visible reduction in fine lines and wrinkles',
       time: 'Results Vary',
       isAvailable: true,
       featured: false
