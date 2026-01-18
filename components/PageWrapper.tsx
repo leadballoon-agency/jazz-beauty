@@ -15,6 +15,7 @@ import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
 import BookingModal from '@/components/BookingModal'
 import VideoModal from '@/components/VideoModal'
+import ExitPopup from '@/components/ExitPopup'
 
 export default function PageWrapper() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
@@ -82,6 +83,14 @@ export default function PageWrapper() {
       <VideoModal
         isOpen={isVideoModalOpen}
         onClose={() => setIsVideoModalOpen(false)}
+      />
+
+      {/* Exit Intent Popup - Endolift & Morpheus8 */}
+      <ExitPopup
+        onBookingClick={() => {
+          setAssessmentData({ skipToCalendar: true })
+          setIsBookingModalOpen(true)
+        }}
       />
 
       {/* Floating Book Now Button */}
