@@ -13,12 +13,12 @@ Landing page for Jazz Beauty Clinic & Training Academy, featuring CO2 Laser skin
 ## Key URLs
 - **Production:** https://co2lasertorquay.co.uk (TBC)
 - **Main Website:** https://www.jazzbeautyclinicandtrainingacademy.co.uk
-- **Repository:** TBD
+- **Repository:** https://github.com/leadballoon-agency/jazz-beauty.git
 
 ## Project Structure
 ```
 app/
-├── layout.tsx          # Root layout with metadata, fonts, tracking
+├── layout.tsx          # Root layout with metadata, fonts, OG image, tracking
 ├── page.tsx            # Home page (renders PageWrapper)
 ├── globals.css         # Global styles, Tailwind imports
 ├── privacy-policy/     # Privacy policy page
@@ -27,23 +27,53 @@ app/
 
 components/
 ├── PageWrapper.tsx     # Main page orchestrator with modal state
-├── PremiumHero.tsx     # Hero section with video
+├── PremiumHero.tsx     # Hero section with pricing & video CTA
 ├── Navigation.tsx      # Sticky nav with mobile menu
-├── AssessmentTool.tsx  # Interactive treatment quiz
+├── AssessmentTool.tsx  # Interactive CO2 laser skin assessment quiz
 ├── AboutSection.tsx    # Jazz's bio and qualifications
 ├── PremiumTreatments.tsx # Treatment cards with pricing
-├── ResultsGallery.tsx  # Before/after gallery
+├── ResultsGallery.tsx  # Before/after gallery (hero: skin rejuvenation)
 ├── Reviews.tsx         # Customer testimonials
-├── ProcessSection.tsx  # Treatment process steps
+├── ProcessSection.tsx  # Treatment process & recovery steps
 ├── FinanceSection.tsx  # Payment options (Klarna, PayPal Pay in 3)
 ├── FAQ.tsx             # Accordion FAQ
 ├── CTASection.tsx      # Final call-to-action
-├── Footer.tsx          # Site footer
-├── BookingModal.tsx    # Booking embed
-├── VideoModal.tsx      # Video player
-├── StructuredData.tsx  # SEO JSON-LD schemas
-└── FacebookPixel.tsx   # Meta Pixel tracking
+├── Footer.tsx          # Site footer with contact details
+├── BookingModal.tsx    # Booking embed modal
+├── VideoModal.tsx      # Video player (PLACEHOLDER - needs Jazz's video)
+├── ExitPopup.tsx       # Exit-intent popup for Endolift/Morpheus8 cross-sell
+├── ModelDayModal.tsx   # Model day application modal (Instagram DM)
+├── TeamSection.tsx     # Team members section (if needed)
+├── StructuredData.tsx  # Full SEO JSON-LD schemas (11 schema types)
+├── FacebookPixel.tsx   # Meta Pixel tracking
+└── ConvertBox.tsx      # ConvertBox integration
 ```
+
+## Current Status
+- [x] All components converted from HIFU template to CO2 Laser
+- [x] Jazz's branding, contact details, and imagery integrated
+- [x] Full SEO schema implemented (LocalBusiness, Person, MedicalProcedure, FAQ, etc.)
+- [x] Social OG image set to Jazz's professional photo
+- [x] Exit-intent popup for Endolift/Morpheus8 cross-promotion
+- [x] Results gallery hero: co2laser-skin-rejeuvenation.jpeg
+- [x] Git repository pushed to GitHub
+- [ ] Video placeholder - needs Jazz's CO2 laser video URL
+- [ ] Pricing TBC - currently shows £TBC
+- [ ] Google verification code may need updating
+
+## Placeholders & TODOs
+1. **Video Modal** (`components/VideoModal.tsx`)
+   - Currently shows "Video Coming Soon" placeholder
+   - Uncomment video element and replace `VIDEO_URL_PLACEHOLDER` with Jazz's video URL
+
+2. **Pricing** (multiple components)
+   - Hero section shows £TBC
+   - PremiumTreatments.tsx needs actual prices
+   - Update when Jazz confirms pricing
+
+3. **Google Verification**
+   - Current code in layout.tsx: `YmpmBBiZS28x8KuDagK4INoc8VVsRiyGDCaJmZPDnxQ`
+   - May need updating for new domain
 
 ## Brand Information
 - **Business:** Jazz Beauty Clinic & Training Academy
@@ -62,9 +92,30 @@ components/
 - **Email:** jazzhairandbeauty@gmail.com
 - **Social Media:**
   - Instagram: @jazzhairandbeautytorquay
-  - Facebook: JazzHairandBeautyinTorquay
-  - TikTok: @jazzkauruk
-  - Twitter: @JazzBeautyHairS
+
+## SEO Schema (Implemented)
+All schemas implemented in `components/StructuredData.tsx`:
+1. HealthAndBeautyBusiness / MedicalBusiness / LocalBusiness
+2. Person (Jazz Kaur with credentials)
+3. MedicalProcedure x4 (Full Face, Targeted, Acne Scar, Pigmentation)
+4. WebSite
+5. WebPage
+6. FAQPage (8 questions)
+7. BreadcrumbList
+8. ItemList (services)
+9. AggregateRating + Reviews
+
+## Social/OG Image
+- **Image:** Jazz Kaur's professional photo from Wix
+- **URL:** https://static.wixstatic.com/media/83d91b_ab40a730c96d469ab44a0700f62c7662~mv2.jpg
+- **Configured in:** `app/layout.tsx` (openGraph and twitter metadata)
+
+## Exit Popup (Cross-Sell)
+- **Component:** `components/ExitPopup.tsx`
+- **Purpose:** Captures leads for Endolift and Morpheus8 treatments
+- **Trigger:** Exit intent (mouse leaves top of page after 5 seconds)
+- **Frequency:** Once per session (uses sessionStorage)
+- **Offer:** Free skin analysis
 
 ## CO2 Laser Technology
 - **Treatment:** CO2 Fractional Laser Skin Resurfacing
@@ -137,31 +188,36 @@ Contact via phone or social media - specific booking system TBD
 - PayPal Pay in 3
 - Pay It Monthly
 
-## Design Guidelines
-- **Primary Color:** Adapt for CO2 Laser aesthetic (consider warm tones for skin/beauty)
-- **Accent Color:** Gold/amber for highlights
-- **Typography:** Mobile-first with responsive scaling
-- **Touch Targets:** Minimum 44px for accessibility
-- **Line Heights:** Body 1.6-1.7, Headings 1.2
+## Available Images (in /public/images/)
+- `co2laser-skin-rejeuvenation.jpeg` - Hero before/after (Results Gallery)
+- `Acne Scarring Before and After.jpeg` - Acne scar results
+- `pigmentation.png` / `pigmentation2.png` - Pigmentation results
+- `graeme.png` - Baggy eyes results (male)
+- `stretch marks.jpeg` - Stretch marks results
+- `beforeafter1.jpg` - `beforeafter4.jpg` - Additional before/afters
+- `logo.png` - Jazz Beauty logo
 
-## SEO Schemas to Implement
-1. HealthAndBeautyBusiness (LocalBusiness)
-2. WebSite
-3. WebPage
-4. FAQPage
-5. VideoObject
-6. BreadcrumbList
-7. Person (Jazz Kaur)
-8. Service + Offer (treatments with prices)
-9. AggregateRating + Reviews
+## Image URLs from Jazz's Website
+- Jazz photo (OG image): https://static.wixstatic.com/media/83d91b_ab40a730c96d469ab44a0700f62c7662~mv2.jpg
+- Award image: https://static.wixstatic.com/media/c38579_7d13f91ffbd14d2aade6abc1341a4937~mv2.png
+- Awards badge: https://static.wixstatic.com/media/c38579_8f02b6cca491429e8f250c3dcb6888fc~mv2.png
+- Logo: https://static.wixstatic.com/media/83d91b_d8bf5777233f4a47a9d20d7aa2e9b2e9~mv2.png
 
 ## Development Commands
 ```bash
-npm install  # Install dependencies
-npm run dev  # Start development server
+npm install   # Install dependencies
+npm run dev   # Start development server (http://localhost:3000)
 npm run build # Production build
 npm run start # Start production server
 npm run lint  # Run ESLint
+```
+
+## Git Commands
+```bash
+git status                    # Check changes
+git add -A                    # Stage all changes
+git commit -m "message"       # Commit
+git push origin main          # Push to GitHub
 ```
 
 ## Important Notes
@@ -170,20 +226,11 @@ npm run lint  # Run ESLint
 - Use `section-padding` utility class for consistent horizontal padding
 - All booking CTAs should trigger the BookingModal or link to contact
 - Track key events with FacebookPixel functions
-
-## Media Assets Needed
-- Jazz Kaur professional photo (from main website)
-- Before/after CO2 Laser results photos
-- Treatment/clinic video content
-- Award badges/logos
-
-## Image URLs from Jazz's Website
-- Award image: https://static.wixstatic.com/media/c38579_7d13f91ffbd14d2aade6abc1341a4937~mv2.png
-- Jazz photo: https://static.wixstatic.com/media/83d91b_ab40a730c96d469ab44a0700f62c7662~mv2.jpg
-- Awards badge: https://static.wixstatic.com/media/c38579_8f02b6cca491429e8f250c3dcb6888fc~mv2.png
-- Logo: https://static.wixstatic.com/media/83d91b_d8bf5777233f4a47a9d20d7aa2e9b2e9~mv2.png
+- Exit popup shows once per session for Endolift/Morpheus8 cross-sell
 
 ## Other Landing Pages (Future)
 Jazz also needs landing pages for:
-- Endolift
-- Morpheus8
+- **Endolift** - Non-surgical face lifting
+- **Morpheus8** - RF microneedling
+
+These can be created as separate projects following the same template structure.
