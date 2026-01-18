@@ -85,13 +85,13 @@ export default function PageWrapper() {
         onClose={() => setIsVideoModalOpen(false)}
       />
 
-      {/* Exit Intent Popup - Endolift & Morpheus8 */}
-      <ExitPopup
+      {/* Exit Intent Popup - Endolift & Morpheus8 (hidden for pitch demo) */}
+      {/* <ExitPopup
         onBookingClick={() => {
           setAssessmentData({ skipToCalendar: true })
           setIsBookingModalOpen(true)
         }}
-      />
+      /> */}
 
       {/* Floating Book Now Button */}
       <button
