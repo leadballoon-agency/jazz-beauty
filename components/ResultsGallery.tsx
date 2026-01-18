@@ -14,12 +14,20 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
 
   const results = [
     {
+      image: '/images/co2laser-skin-rejeuvenation.jpeg',
+      title: 'Skin Rejuvenation',
+      description: 'Complete skin rejuvenation, renewal and tightening - the results speak for themselves',
+      time: 'Real Results',
+      isAvailable: true,
+      featured: true
+    },
+    {
       image: '/images/Acne Scarring Before and After.jpeg',
       title: 'Acne Scar Treatment',
       description: 'Dramatically reduce acne scarring and improve skin texture',
       time: 'Results Vary',
       isAvailable: true,
-      featured: true
+      featured: false
     },
     {
       image: '/images/pigmentation.png',
@@ -30,17 +38,9 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
       featured: false
     },
     {
-      image: '/images/beforeafter1.jpg',
-      title: 'Skin Resurfacing',
-      description: 'Smooth fine lines and improve skin tone',
-      time: 'Results Vary',
-      isAvailable: true,
-      featured: false
-    },
-    {
-      image: '/images/beforeafter2.jpg',
-      title: 'Wrinkle Reduction',
-      description: 'Visible reduction in fine lines and wrinkles',
+      image: '/images/graeme.png',
+      title: 'Baggy Eyes',
+      description: 'Effective results for men and women',
       time: 'Results Vary',
       isAvailable: true,
       featured: false
